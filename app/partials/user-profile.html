@@ -1,0 +1,34 @@
+<div ng-controller="UserProfileCtrl">
+	<h3>Profile of {{ appState.currentUser.fullName }}</h3>
+	<form class="form-horizontal">
+
+		<div class="control-group">
+			<label for="user-full-name" class="control-label">Full Name</label>
+			<div class="controls">
+				<input id="user-full-name" type="text" ng-model="appState.currentUser.fullName" />
+			</div>
+		</div>
+
+		<div class="control-group">
+			<label for="user-name" class="control-label">User Name</label>
+			<div class="controls">
+				<input id="user-name" type="text" ng-model="appState.currentUser.name" />
+			</div>
+		</div>
+
+		<div class="control-group">
+			<label for="user-surname" class="control-label">Surname</label>
+			<div class="controls">
+				<input id="user-surname" type="text" ng-model="appState.currentUser.surname" />
+			</div>
+		</div>
+
+		<div class="control-group">
+			<label for="user-birthdate" class="control-label">Date of birth</label>
+			<div class="controls">
+				<input id="user-birthdate" type="date" datepicker="{{ appState.currentUser.birthdate | date }}" />
+			</div>
+		</div>
+
+	</form>
+</div>

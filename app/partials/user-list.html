@@ -1,0 +1,35 @@
+<div ng-controller="UserListCtrl">
+
+	<div class="actions">
+		<a ng-click="addUser()" class="btn btn-small"><i class="icon-plus"></i>Add new user</a>
+	</div>
+
+	<table class="user-list">
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Age</th>
+				<th>Rating</th>
+				<th></th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="user in User.collection"
+					ng-click="activateUser()"
+					ng-class="{ active: user == appState.currentUser }">
+				<td>{{ user.fullName }}</td>
+				<td>{{ user.age }}</td>
+				<td><rating value="user.rating" max="5"></rating></td>
+				<td>
+					<a ng-click="editUser()" class="edit-user btn btn-mini"><i class="icon-edit"></i>Edit</a>
+					<a ng-click="removeUser()" class="remove-user btn btn-mini"><i class="icon-minus"></i>Remove</a>
+				</td>
+			</tr>
+		</tbody>
+		<tfoot>
+			<tr>
+				<td><span class="badge">{{ User.collection.length }}</span> users total</td>
+			</tr>
+		</tfoot>
+	</table>
+</div>
